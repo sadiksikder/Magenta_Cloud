@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.magenta_cloud</groupId>
+  <artifactId>Magenta_Cloud</artifactId>
+  <version>1.0</version> 
+  <name>magenta_cloud</name>
+
+<dependencies>
+  	<dependency>
+  		<groupId>com.github.lookfirst</groupId>
+  		<artifactId>sardine</artifactId> 
+  		<version>5.7</version>
+  		<!-- <systemPath>/home/ssikder/java/ami.jar </systemPath> -->
+	</dependency>
+  </dependencies>
+  
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <!--  <executions>
+                <execution>
+                	<id>attach-javadocs</id>
+                	<goals>
+                			<goal>jar</goal>
+                	</goals>
+                </execution>
+                </executions>  -->
+                <configuration>
+                    <archive>
+                        <manifest>
+                        	<addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                        	<!--  <mainClass>com.magenta_cloud.Magenta_Cloud</mainClass>  -->
+                        	<mainClass>com.magenta_cloud.Arg_Magenta_Cloud</mainClass>
+                        	<!-- <mainClass>com.magenta_cloud.Netcologne_upload</mainClass> -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.4.3</version>
+                <configuration>
+                    <createDependencyReducedPom>true</createDependencyReducedPom>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+           
+            
+            
+        </plugins>
+    </build>
+</project>
+  
