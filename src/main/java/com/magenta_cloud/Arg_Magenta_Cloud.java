@@ -24,8 +24,8 @@ public class Arg_Magenta_Cloud {
 		 System.out.println("\n \t***Successfully Logged in Magenta Cloud :)***\n"); 
 		 
 		/**FILE upload code*/
-		//File file = new File(args[0]);
 		File file = new File(args[0]);
+		//File file = new File(args[1]);
 		InputStream myInputStream = new FileInputStream(file);
 		System.out.print("Uploading Reqest is Starting. ");
         String filename = file.getName();
